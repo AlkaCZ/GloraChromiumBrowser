@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloraChromiumBrowser", "GloraChromiumBrowser\GloraChromiumBrowser.csproj", "{FA3CE71F-47B5-402B-8236-4B262D4FFCE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA3CE71F-47B5-402B-8236-4B262D4FFCE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3CE71F-47B5-402B-8236-4B262D4FFCE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3CE71F-47B5-402B-8236-4B262D4FFCE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3CE71F-47B5-402B-8236-4B262D4FFCE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {311F7E7B-9BBE-41A3-9FDF-C9D912A25D40}
+	EndGlobalSection
+EndGlobal
