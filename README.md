@@ -1,0 +1,4 @@
+- Basic look of the browser
+- Instalation of the needed packages
+- Basic func
+- History of pages
