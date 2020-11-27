@@ -4,9 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GloraChromiumBrowser"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="249*"/>
+            <ColumnDefinition Width="544*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <TextBox KeyDown="Input_KeyDown" BorderThickness="2" BorderBrush="#FFDA662F" x:Name="Input" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Background="Black" FontFamily="Tahoma" Foreground="#FFDA662F" SelectionBrush="#FFDA662F" FontSize="18" TextAlignment="Justify" MaxLength="2000" Margin="3" TextWrapping="Wrap" MaxLines="1"></TextBox>
+            <Button Click="BackwardButt_Click" x:Name="BackwardButt" Background="Black" Foreground="#FFDA662F" Content="←" FontSize="11"/>
+            <Button Click="ForwardButt_Click" x:Name="ForwardButt" Grid.Column="1" Background="Black" Content="→" Foreground="#FFDA662F" ></Button>
+            <Button Click="RefreschButt_Click" Name="RefreschButt" Grid.Column="2" Background="Black" Foreground="#FFDA662F" Content="⟳"></Button>
+            <Button Click="HomeButt_Click" x:Name="HomeButt" Grid.Column="3" Background="Black" Foreground="#FFDA662F" Content="Home"></Button>
+            <Button Click="HistoryButt_Click" x:Name="HistoryButt" Grid.Column="7" Background="Black" Foreground="#FFDA662F" Content="History"></Button>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.ColumnSpan="2"></Border>
+        <cefSharp:ChromiumWebBrowser Grid.Row="1" x:Name="Browser" Address="google.com" Grid.ColumnSpan="2"></cefSharp:ChromiumWebBrowser>
     </Grid>
 </Window>
