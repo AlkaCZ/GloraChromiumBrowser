@@ -96,7 +96,7 @@ namespace GloraChromiumBrowser
             item.Click += History_Clicked;
             item.Header = Link;
             item.Width = 190;
-            //item.Icon = //Dodelat ikony
+            item.Icon = "⮌";
             HistoryMenu.HorizontalOffset = -142;
             HistoryMenu.Items.Add(item);
 

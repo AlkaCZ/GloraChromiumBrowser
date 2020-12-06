@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GloraChromiumBrowser"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextOptions.TextRenderingMode="Grayscale"
+        Background="{DynamicResource MaterialDesignDarkBackground}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="GloraBrowser" Height="450" Width="800" Loaded="Window_Loaded" Icon="icon.jpg" Background="#FF3C3A3A" BorderBrush="Black">
+        Title="GloraBrowser" Height="450" Width="800" Loaded="Window_Loaded" Icon="icon.jpg" BorderBrush="Black">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="62*"/>
@@ -28,14 +32,20 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="60"/>
             </Grid.ColumnDefinitions>
-            <TextBox KeyDown="Input_KeyDown" BorderThickness="2" BorderBrush="#FFFF9800" x:Name="Input" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Background="Black" FontFamily="Tahoma" Foreground="#FFFF9800" SelectionBrush="#FFFF9800" FontSize="18" TextAlignment="Justify" MaxLength="2000" Margin="3" TextWrapping="Wrap" MaxLines="1"></TextBox>
-            <Button Click="BackwardButt_Click" x:Name="BackwardButt" Background="Black" Foreground="#FFFF9800" Content="←" FontSize="11"/>
-            <Button Click="ForwardButt_Click" x:Name="ForwardButt" Grid.Column="1" Background="Black" Content="→" Foreground="#FFFF9800" ></Button>
-            <Button Click="RefreschButt_Click" Name="RefreschButt" Grid.Column="2" Background="Black" Foreground="#FFFF9800" Content="⟳"></Button>
-            <Button Click="HomeButt_Click" x:Name="HomeButt" Grid.Column="3" Background="Black" Foreground="#FFFF9800" Content="Home">
+            <TextBox KeyDown="Input_KeyDown" BorderThickness="2" BorderBrush="#FFFF9800" x:Name="Input" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Background="Black" Foreground="#FFFF9800" SelectionBrush="#FFFF9800" FontSize="18"  MaxLength="2000" Margin="3"  MaxLines="1">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Button Click="BackwardButt_Click" x:Name="BackwardButt" Background="Black" Foreground="#FFFF9800" Content="⮜" FontSize="22" Margin="2,0,2,0"/>
+            <Button Click="ForwardButt_Click" x:Name="ForwardButt" Grid.Column="1" Background="Black" Content="⮞"  FontSize="22" Foreground="#FFFF9800" Margin="0,0,2,0" />
+            <Button Click="RefreschButt_Click" Name="RefreschButt" Grid.Column="2" Background="Black" Foreground="#FFFF9800" FontSize="22" Content="⟳" Margin="0,0,2,0" FontWeight="ExtraBold"></Button>
+            <Button Click="HomeButt_Click" x:Name="HomeButt" Grid.Column="3" Background="Black" Foreground="#FFFF9800" Content="🏠" FontSize="20">
 
             </Button>
-            <Button Click="HistoryButt_Click" x:Name="HistoryButt" Grid.Column="7" Background="Black" Foreground="#FFFF9800" Content="History">
+            <Button Click="HistoryButt_Click" x:Name="HistoryButt" Grid.Column="7" Background="Black" Foreground="#FFFF9800" Content="⏳" FontSize="20" Margin="0,0,2,0">
                 <Button.ContextMenu>
                     <ContextMenu x:Name="HistoryMenu" Opacity="70"  Background="#FF3C3A3A" Foreground="#FFFF9800"></ContextMenu>
                 </Button.ContextMenu>
