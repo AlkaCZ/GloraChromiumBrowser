@@ -31,10 +31,24 @@ namespace GloraChromiumBrowser
 
         private void BackwardButt_Click(object sender, RoutedEventArgs e)
         {
-            if ((WebPages.Count + PageNumber - 1) >= 0)
+            if ((WebPages.Count + PageNumber) >= 0)
             {
-                PageNumber--;
                 LoadWeb(WebPages[PageNumber], false);
+                PageNumber--;
+
+                if (PageNumber == -1)
+                {
+                    PageNumber = 0;
+                    LoadWeb(WebPages[PageNumber], false);
+                    MessageBox.Show("You are on your first page, you cannot go back anymore", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("You are on your first page, you cannot go back anymore", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+
             }
         }
 
@@ -57,15 +71,37 @@ namespace GloraChromiumBrowser
         {
             LoadWeb(WebPages[0]);
         }
+        private void History_Clicked(object sender, RoutedEventArgs e)
+        {
+            MenuItem item = (MenuItem)sender;
+            LoadWeb(item.Header.ToString());
+            
+        }
 
         private void HistoryButt_Click(object sender, RoutedEventArgs e)
         {
+            if (PageNumber > 0)
+            {
+                HistoryMenu.PlacementTarget = HistoryButt;
+                HistoryMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
+                HistoryMenu.IsOpen = true;
+            }
 
         }
         void LoadWeb(string Link, bool Side = true)
         {
             Browser.Address = Link;
             Input.Text = Link;
+            MenuItem item = new MenuItem();
+            item.Click += History_Clicked;
+            item.Header = Link;
+            item.Width = 190;
+            //item.Icon = //Dodelat ikony
+            HistoryMenu.HorizontalOffset = -142;
+            HistoryMenu.Items.Add(item);
+
+
+
             if (Side)
             {
                 PageNumber++;
