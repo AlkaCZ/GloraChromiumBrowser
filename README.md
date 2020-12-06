@@ -6,6 +6,7 @@
 - Material desing for the browser - DONE
 - Material desing icons
 - Custom home page
+- Resizable browser - DONE
 
 !For startin this project you need to have instaled these packages!
 - cef.redist.x64 , https://github.com/cefsharp/cef-binary
